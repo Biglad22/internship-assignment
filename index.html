@@ -30,8 +30,8 @@
                     </button>
                 </div>
                 
-                <div class="nav-btns flex flex-wrap gap-7  lg:gap-[3.2rem]  bg-[rgba(26, 26, 26, 0.80)] invisible  mb:visible backdrop-blur-sm md:bg-transparent md:backdrop-blur-none md:items-center absolute z-10 left-full top-full flex-col md:static md:flex-row transition-all duration-500 " 
-                    :class="navOpen ? 'visible' : null">
+                <div class="nav-btns  flex-wrap gap-7  lg:gap-[3.2rem]  bg-[rgba(26, 26, 26, 0.80)] md:flex  mb:backdrop-blur-sm md:bg-transparent md:backdrop-blur-none md:items-center absolute z-10 left-full top-full flex-col md:static md:flex-row transition-all duration-500 " 
+                    :class="navOpen ? 'flex' : 'hidden'">
                     <div class='items-center md:items-start md:flex md:flex-wrap  md:flex-col md:gap-[3.2rem] w-fit h-fit p-2.5 ' v-for="(btn, index) in navBtns" :key="index">
                         <div class='flex flex-wrap items-center gap-3.5'>
                             <a href='#' class="capitalize text-[var(--text-h) !important]">
@@ -72,7 +72,7 @@
                 <h3 class="main-title text-center text-[rgb(255,191,0)] capitalize">
                     lorem ipsum dolor sit
                 </h3>
-                <h6 class="text-center">
+                <h6 class="text-center"> 
                     lorem ipsum dolor sit amet consectetur. nunc blandit id pellentesque
                 </h6>
             </div>
