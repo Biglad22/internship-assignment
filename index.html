@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Koios Engineering Solutions</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link href="./output.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/logo.svg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Inter:wght@300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+</head>
+<body>
+    <div id="APP" v-cloak class=" flex flex-wrap  flex-col gap-0 bg-[rgb(26,26,26)]">
+        <nav class="w-full fixed top-0 py-7 px-[var(--margin)] bg-[rgba(26, 26, 26, 0.80)] backdrop-blur-sm ">
+            <div class="w-full flex justify-between gap-7 items-center">
+                <a href='#' class="logo-sec flex flex-wrap gap-[1rem] items-center">
+                    <img src="./assets/logo.svg" class="w-[4.3rem] h-auto" alt="Koios logo"/>
+                    <span class="text-[var(--text-h)] hidden md:inline-block capitalize comp-name">
+                        koios engineering solutions
+                    </span>
+                </a>
+                <div class="menu">
+                    <button type="button" class=" p-3.5" @click="navOpen = !navOpen">
+                        <i class="fi fi-br-menu-burger before:h-fit"></i>
+                    </button>
+                </div>
+                
+                <div class="nav-btns flex flex-wrap gap-7  lg:gap-[3.2rem]  bg-[rgba(26, 26, 26, 0.80)] invisible  mb:visible backdrop-blur-sm md:bg-transparent md:backdrop-blur-none md:items-center absolute z-10 left-full top-full flex-col md:static md:flex-row transition-all duration-500 " 
+                    :class="navOpen ? 'visible' : null">
+                    <div class='items-center md:items-start md:flex md:flex-wrap  md:flex-col md:gap-[3.2rem] w-fit h-fit p-2.5 ' v-for="(btn, index) in navBtns" :key="index">
+                        <div class='flex flex-wrap items-center gap-3.5'>
+                            <a href='#' class="capitalize text-[var(--text-h) !important]">
+                                {{btn.title}}
+                            </a>
+                            <button type='button' class='p-3.5 text-[var(--text-h)]' @click='isClicked = isClicked == index ? null : index'>
+                                <i class="fi fi-rr-angle-small-down" :class="isClicked == index ? 'rotate-180' : null"></i>
+                            </button>
+                        </div>
+                        <ul class='md:absolute z-10 md:top-[100%] md:left-auto p-3.5 rounded-sm bg-[rgba(26, 26, 26, 0.80)] backdrop-blur-sm ' :class="index === isClicked ? 'block' : 'hidden'" >
+                            <li v-for="(sub, i) in btn.subLink ">
+                                <a href='#' class="p-2.5 block" >
+                                    {{sub}}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#" class="p-2.5 block" >About Us</a>
+                    <a href="#" class="py-3.5 px-7 full-btn text-[1.4rem] flex flex-wrap gap-3.5 capitalize font-medium w-fit items-center">
+                        contact Us
+                        <i class="fi fi-rr-angle-small-right"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <header class=" flex items-center justify-center px-[var(--margin)] h-[100vh] hero">
+            <div class="flex flex-wrap flex-col justify-center items-center gap-[2.4rem] hero-wrap w-full h-full">
+                <h1 class="header-title capitalize font-normal text-center  tracking-[-2px] md:tracking-[-4px] lg:tracking-[-6px]  leading-[120%]">
+                    implementing
+                    <br/>
+                    your ideas to reality
+                </h1>
+                <h6 class="capitalize font-bold w-fit">Endless Solutions, One Destination</h6>
+            </div>
+        </header>
+        <section class=' sec-sect flex flex-wrap flex-col gap-[8rem] justify-center items-center px-[var(--margin)]'>
+            <div class="sec-title">
+                <h3 class="main-title text-center text-[rgb(255,191,0)] capitalize">
+                    lorem ipsum dolor sit
+                </h3>
+                <h6 class="text-center">
+                    lorem ipsum dolor sit amet consectetur. nunc blandit id pellentesque
+                </h6>
+            </div>
+            <p class="text-center">
+                Lorem ipsum dolor sit amet consectetur. Arcu nisl mi adipiscing congue in et. Mi ullamcorper dui platea hendrerit nibh nec pharetra ut facilisis. Sit sit euismod pellentesque mauris. Nec aliquam ac gravida turpis neque ac praesent. Suspendisse non vulputate egestas suscipit accumsan ultrices mattis tristique sapien. Nunc enim malesuada turpis interdum. Nibh semper arcu leo tincidunt dui porta.
+                <br />
+                Eget orci adipiscing tortor eget sagittis. Elementum rhoncus eleifend eu in bibendum tellus ullamcorper. Placerat tempor eu pharetra quam eget sit. A dictum pretium volutpat fermentum nunc id. Integer vitae parturient aliquet tincidunt.
+            </p>
+        </section>
+        <footer class="flex flex-wrap flex-col items-center px-[var(--margin)] py-[4rem] gap-[3.2rem]">
+            <div class="top-footer">
+                <a href="#" class="logo-sec flex flex-wrap gap-[1rem] mb-[3.2rem] items-center" >
+                    <img src="./assets/logo.svg" class="h-[4.2rem] w-auto" alt="Koios logo"/>
+                    <span class="text-[var(--text-h)] capitalize comp-name">
+                        koios engineering solutions
+                    </span>
+                </a>
+                <div class="site-map">
+                    <div class=" flex flex-wrap gap-3.5 justify-center">
+                        <a v-for="(i,index) in siteMap.slice(0,3)" :key="index" href="#" class="p-1.5 font-normal not-italic text-[var(--text-m)] capitalize block">
+                            {{i}}
+                        </a>
+                    </div>
+                    <div class=" backdr flex flex-wrap gap-3.5 justify-center">
+                        <a v-for="(i,index) in siteMap.slice(3)" :key="index" href="#" class="p-1.5 font-normal not-italic text-[var(--text-m)] capitalize block">
+                            {{i}}
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+            <hr class="w-full border-t" style="border-color:rgba(38, 38, 38, 1)" />
+            <div class="bottom-footer flex flex-wrap justify-between items-center flex-col md:flex-row  w-full gap-3.5">
+                <div class="socials order-3 md:order-1">
+                    <img src="./assets/icons/instagram.svg" class="h-[2.4rem] w-auto inline-block me-[2.4rem]" alt="Koios logo"/>
+                    <img src="./assets/icons/linkedin.svg" class="h-[2.4rem] w-auto inline-block" alt="Koios logo"/>
+                </div>
+                <p class="text-[rgba(152, 162, 179, 1)] font-normal order-1 md:order-2">
+                    &copy; 2023 All rights reserved.
+                </p>
+                <div class="flex flex-wrap gap-1.5 sm:gap-3.5 items-center order-2 md:order-3">
+                    <a href="#" class="p-3.5 text-[var(--text-m)] text-[rgba(152, 162, 179, 1)] font-normal capitalize">Privacy Policy</a>
+                    <p>
+                        |
+                    </p>
+                    <a href="#" class="p-3.5 text-[var(--text-m)] text-[rgba(152, 162, 179, 1)] font-normal capitalize">Terms of Service</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        const app = Vue.createApp(
+            {
+                data(){
+                    return{
+                        siteMap:[
+                            'Engineering', 'Software', 'Edu-tech', 'About us','Careers'
+                        ],
+                        navBtns:[
+                            {
+                                title:'engineering',
+                                subLink:[
+                                    'mechanical solution',
+                                    'automative solution',
+                                    'products'
+                                ]
+                            },
+                            {
+                                title:'software',
+                                subLink:[
+                                    'web development',
+                                    'website designing',
+                                    'wordpress website',
+                                    'company branding' 
+                                ]
+                            },
+                            {
+                                title:'Edu-Tech',
+                                subLink:[
+                                    'web development',
+                                    'website designing',
+                                    'wordpress website',
+                                    'company branding' 
+                                ]
+                            }
+                        ],
+                        isClicked:null,
+                        navOpen:false
+
+                    }
+                },
+                methods:{
+
+                }
+            }
+        );
+        app.mount('#APP');
+    </script>
+</body>
+</html>

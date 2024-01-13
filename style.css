@@ -1,0 +1,222 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,::after,::before{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+
+
+:root{
+  --w-text-h: rgb(255,255,255);
+  --w-text-m: rgba(255,255,255,0.6);
+  --w-text-l: rgba(255,255,255,0.3);
+
+  --b-text-h: rgb(0,0,0);
+  --b-text-m: rgba(0,0,0,0.6);
+  --b-text-l: rgba(0,0,0,0.3);
+
+  --text-h:var(--w-text-h);
+  --text-m:var(--w-text-m);
+  --text-l:var(--w-text-l);
+}
+
+/* page margins for different screen sizes */
+/* Resetting default margin for all screens */
+
+/* Small screens (phones) */
+@media only screen and (max-width: 600px) {
+  :root {
+    --margin: 16px;
+  }
+}
+
+/* Medium screens (tablets) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  :root {
+    --margin: 56px;
+  }
+}
+
+/* Large screens (desktops) */
+@media only screen and (min-width: 1025px) {
+  :root {
+    --margin: 160px;
+  }
+}
+
+/* Default font size for the entire page */
+html {
+  font-size: 10px !important;
+}
+
+/* Default font size for the entire page */
+body {
+  font-size: 10px;
+}
+
+/* Responsive font sizes for headings and paragraphs at different screen sizes */
+
+/* Small screens (phones) */
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 3.5rem; /* Adjust as needed */
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 2.5rem;
+  }
+  h4 {
+    font-size: 2rem;
+  }
+  h5 {
+    font-size: 1.8rem;
+  }
+  h6 {
+    font-size: 1.6rem;
+  }
+  p, a, span, li, button {
+    font-size: 1.4rem;
+  }
+}
+
+/* Medium screens (tablets) */
+@media only screen and (min-width: 601px) and (max-width: 1440px) {
+  h1 {
+    font-size: 7rem;
+  }
+  h2 {
+    font-size: 5rem;
+  }
+  h3 {
+    font-size: 4rem;
+  }
+  h4 {
+    font-size: 3rem;
+  }
+  h5 {
+    font-size: 2.5rem;
+  }
+  h6 {
+    font-size: 2rem;
+  }
+  p, a, span, li, button {
+    font-size: 1.6rem;
+  }
+}
+
+/* Large screens (desktops) */
+@media only screen and (min-width: 1441px) {
+  h1 {
+    font-size: 10rem;
+  }
+  h2 {
+    font-size: 8rem;
+  }
+  h3 {
+    font-size: 6rem;
+  }
+  h4 {
+    font-size: 4rem;
+  }
+  h5 {
+    font-size: 3rem;
+  }
+  h6 {
+    font-size: 2.5rem;
+  }
+  p, a, span, li, button {
+    font-size: 1.6rem;
+  }
+}
+
+
+
+button{
+  cursor:pointer;
+}
+
+h1,h2,h3,h4,h5,h6, input, textarea{
+  color:var(--text-h);
+  font-family: 'Allerta Stencil', sans-serif
+}
+
+p, li, a:not(.logo-sec), button, span:not(.comp-name){
+  color:var(--text-m); 
+  font-family: 'Quicksand', sans-serif;
+}
+
+.logo-sec{
+  font-family: 'Quicksand', sans-serif;
+}
+
+
+::-webkit-scrollbar, ::-webkit-scrollbar-track{
+  display: none !important;
+}
+
+
+/* hero section styles */
+.hero{
+  background-image: url('./assets/bg-vectors.svg');
+  background-position: center center;
+  background-size: cover;
+}
+
+.header-title{
+  background: linear-gradient(92deg, #FFBF00 17.84%, #0D9BBF 48.87%, #FFF 87.19%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/*secon section styles*/
+.sec-sect{
+  background-image: url('./assets/bg-sec-2.png');
+  background-position: top center;
+  background-size: cover;
+  padding-top: calc(max(var(--margin), 15vh) * 2.556);
+  padding-bottom: calc(max(var(--margin), 15vh) * 1.806); 
+  height: fit-content;
+}
+
+.hero-wrap{
+  border-radius: 1440px;
+  background: radial-gradient(50% 50% at 50% 50%, #1A1A1A 0%, rgba(26, 26, 26, 0.00) 100%);
+}
+
+.full-btn{
+  background-color:rgb(255, 191, 0);
+  color:#1a1a1a !important;
+  border-radius: 5.0rem;
+  transition: all 0.5s;
+  position: relative;
+}
+
+.full-btn::before{
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background-image: linear-gradient(to top right, rgba(255, 191, 0, 1),  rgba(255, 191, 0, 0) );
+  top:-0.1rem;
+  bottom:-0.1rem;
+  left:-0.1rem;
+  right:-0.1rem;
+  border-radius: 5.0rem;
+}
+
+.full-btn:hover{
+  color:rgb(255, 191, 0) !important;
+  background-color:rgba(26, 26, 26, 1) !important;
+  transition: all 0.5s;
+}
+
+@media only screen and (min-width:768px) {
+  .menu{
+    display:none;
+  }  
+}
